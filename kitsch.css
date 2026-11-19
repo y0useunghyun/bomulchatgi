@@ -1,0 +1,89 @@
+/* 키치 버전: ?look=kitsch — 문방구·불량식품 봉지 느낌. 그림자 없이 굵은 검은 선으로 */
+
+[data-look="kitsch"] {
+  --bg: #fff23a;
+  --ink: #111;
+  --sub: #111;
+  --line: #111;
+  --point: #ff3d9a;
+  --point-ink: #111;
+  --pink: #ff3d9a;
+  --blue: #2f6bff;
+  --green: #19c25b;
+  --red: #ff3b2f;
+  --mint: #7ff0d4;
+}
+
+[data-look="kitsch"] .phone {
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--pink) 18%, transparent 19%);
+  background-size: 34px 34px;
+}
+
+/* 바탕: 흰 쪽지가 잔뜩 깔림 (app.js에서 뿌림) */
+.paper-bg { display: none; }
+[data-look="kitsch"] .paper-bg { display: block; position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+[data-look="kitsch"] .screen { position: relative; z-index: 1; }
+.paper-bg i {
+  position: absolute; background: #fff; border: 2px solid var(--ink);
+}
+.paper-bg i::before, .paper-bg i::after { content: ''; position: absolute; background: rgba(0,0,0,.18); }
+.paper-bg i::before { left: 50%; top: 0; bottom: 0; width: 1px; }
+.paper-bg i::after  { top: 50%; left: 0; right: 0; height: 1px; }
+
+/* 쪽지: 장마다 다른 색 + 굵은 선 */
+[data-look="kitsch"] #enter { position: relative; }
+[data-look="kitsch"] .note { --c: var(--kc); }
+[data-look="kitsch"] .q { outline: 0; border: solid var(--ink); }
+[data-look="kitsch"] .tl { border-width: 3px 1.5px 1.5px 3px; }
+[data-look="kitsch"] .tr { border-width: 3px 3px 1.5px 1.5px; }
+[data-look="kitsch"] .bl { border-width: 1.5px 1.5px 3px 3px; }
+[data-look="kitsch"] .br { border-width: 1.5px 3px 3px 1.5px; }
+[data-look="kitsch"] .enter-link { font-family: var(--font-ahn); font-size: 19px; color: var(--ink); background: #fff; border: 2px solid var(--ink); padding: 2px 10px; }
+
+
+
+
+/* 버튼 */
+[data-look="kitsch"] .btn {
+  border: 3px solid var(--ink); border-radius: 14px;
+  font-family: var(--font-ahn); font-size: 22px; letter-spacing: .05em;
+}
+
+/* 이름 화면 */
+[data-look="kitsch"] .ask { font-family: var(--font-ahn); font-size: 26px; }
+[data-look="kitsch"] .enter-form input {
+  background: #fff; border: 3px solid var(--ink); border-radius: 14px;
+}
+
+/* 행사 중 */
+[data-look="kitsch"] .top { background: var(--bg); border-bottom: 3px solid var(--ink); padding-bottom: 12px; }
+[data-look="kitsch"] .logo { color: var(--red); -webkit-text-stroke: 1.5px var(--ink); paint-order: stroke fill; font-size: 30px; }
+[data-look="kitsch"] .me { font-weight: 700; }
+[data-look="kitsch"] .tabs { margin: 0; border-bottom: 3px solid var(--ink); background: #fff; }
+[data-look="kitsch"] .tabs button { font-family: var(--font-ahn); font-size: 20px; color: var(--ink); border: 0; margin: 0; }
+[data-look="kitsch"] .tabs button + button { border-left: 3px solid var(--ink); }
+[data-look="kitsch"] .tabs button[aria-selected="true"] { background: var(--pink); }
+[data-look="kitsch"] .tabs button[data-tab="photo"][aria-selected="true"] { background: var(--mint); }
+
+[data-look="kitsch"] .tag { color: #fff; -webkit-text-stroke: 2.5px var(--ink); paint-order: stroke fill; }
+/* 펴진 쪽지 위 글씨: 흰 글씨 + 얇은 검은 테 (색종이 위 가독성) */
+[data-look="kitsch"] .notes .face small,
+[data-look="kitsch"] .hint-note .face { color: #fff; }
+[data-look="kitsch"] .notes .face small,
+[data-look="kitsch"] .hint-note p,
+[data-look="kitsch"] .hint-note .no { color: #fff; -webkit-text-stroke: 2px var(--ink); paint-order: stroke fill; opacity: 1; }
+
+[data-look="kitsch"] .empty {
+  font-family: var(--font-ahn); font-size: 22px; color: var(--ink);
+  background: #fff; border: 3px solid var(--ink); padding: 14px; transform: rotate(-1.5deg);
+}
+[data-look="kitsch"] .timer { background: #fff; border: 3px solid var(--ink); padding: 10px 14px; border-radius: 14px; }
+[data-look="kitsch"] .shoot {
+  background: #fff; border: 3px solid var(--ink); border-radius: 22px;
+  font-family: var(--font-ahn); font-size: 26px;
+}
+[data-look="kitsch"] .timer.due + .shoot { background: var(--mint); color: var(--ink); }
+[data-look="kitsch"] .photos li { border: 3px solid var(--ink); border-radius: 0; }
+[data-look="kitsch"] .photos li:nth-child(odd)  { transform: rotate(-2deg); }
+[data-look="kitsch"] .photos li:nth-child(even) { transform: rotate(2deg); }

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko" data-look="kitsch">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>보물찾기</title>
+<!-- Adobe Fonts: AG 안상수체 2012 (안상수 프로젝트와 같은 키트) -->
+<script>
+  (function(d) {
+    var config = { kitId: 'tde8evh', scriptTimeout: 3000, async: true },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="kitsch.css">
+</head>
+<body>
+<div class="phone">
+
+  <!-- 입장 -->
+  <section id="enter" class="screen">
+    <div id="notes" class="notes"></div>
+    <button id="enterBtn" class="enter-link">입장하기 ›</button>
+  </section>
+
+  <!-- 이름 -->
+  <section id="name" class="screen" hidden>
+    <form id="nameForm" class="enter-form">
+      <p class="ask">이름을 알려 주세요</p>
+      <input id="nick" maxlength="10" placeholder="이름 또는 닉네임" autocomplete="off" required>
+      <button class="btn">시작하기</button>
+    </form>
+  </section>
+
+  <!-- 행사 중 -->
+  <section id="main" class="screen" hidden>
+    <header class="top">
+      <button id="homeBtn" class="logo" aria-label="처음 화면으로">보물찾기</button>
+      <span id="me" class="me"></span>
+    </header>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="hint" aria-selected="true">힌트</button>
+      <button role="tab" data-tab="photo" aria-selected="false">사진 올리기</button>
+    </nav>
+
+    <div class="panes">
+      <!-- 힌트: 주최자가 공지 -->
+      <div id="pane-hint" class="pane">
+        <form id="hintForm" class="hint-form" hidden>
+          <textarea id="hintText" rows="2" placeholder="힌트 공지 (주최자만 보임)"></textarea>
+          <button class="btn small">공지</button>
+        </form>
+        <div id="hints" class="hints"></div>
+        <p id="hintEmpty" class="empty">첫 힌트를 기다려 주세요</p>
+      </div>
+
+      <!-- 사진: 5분마다 -->
+      <div id="pane-photo" class="pane" hidden>
+        <div class="timer">
+          <span id="timerLabel">지금 찾고 있는 모습을 찍어 올려 보세요</span>
+          <b id="timer"></b>
+        </div>
+        <label class="shoot">
+          <input id="file" type="file" accept="image/*" capture="environment" hidden>
+          <span>찍어서 올리기</span>
+        </label>
+        <ul id="photos" class="photos"></ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
