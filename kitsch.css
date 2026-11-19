@@ -23,6 +23,9 @@
 /* 바탕: 흰 쪽지가 잔뜩 깔림 (app.js에서 뿌림) */
 .paper-bg { display: none; }
 [data-look="kitsch"] .paper-bg { display: block; position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+/* 입장한 뒤(이름·힌트·사진)엔 바탕을 흐리게 */
+[data-look="kitsch"] .phone:has(#enter[hidden]) { background-image: none; }
+[data-look="kitsch"] .phone:has(#enter[hidden]) .paper-bg { filter: blur(5px); opacity: .45; }
 [data-look="kitsch"] .screen { position: relative; z-index: 1; }
 .paper-bg i {
   position: absolute; background: #fff; border: 2px solid var(--ink);

@@ -78,8 +78,8 @@ button, input, textarea { font: inherit; color: inherit; }
 .notes .tag { font-size: calc(var(--n) * .36); }
 .notes .face small { font-family: var(--font-ahn); font-size: 22px; line-height: 1.25; color: #111; text-align: center; padding: 0 10px; word-break: keep-all; text-wrap: balance; }
 
-.enter-link {
-  visibility: hidden; border: 0; background: none; cursor: pointer;
+#enter .enter-link { visibility: hidden; }
+.enter-link { border: 0; background: none; cursor: pointer;
   font-size: 14px; color: var(--sub); text-decoration: underline; text-underline-offset: 4px;
 }
 #enter.ready .enter-link { visibility: visible; }
@@ -87,6 +87,7 @@ button, input, textarea { font: inherit; color: inherit; }
 /* ── 입장 ── */
 #enter { align-items: center; justify-content: center; gap: 36px; padding: 24px; }
 #name { align-items: center; justify-content: center; padding: 24px; }
+.enter-form .start { align-self: center; margin-top: 6px; }
 .ask { text-align: center; font-size: 20px; font-weight: 700; margin-bottom: 14px; }
 .enter-form { width: 100%; max-width: 300px; display: flex; flex-direction: column; gap: 10px; }
 .enter-form input {
